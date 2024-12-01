@@ -19,9 +19,10 @@ const SDescription = styled.div`
   margin: 1rem 0;
 `;
 
-const Image = ({ source, title, medium }) => {
+
+const Image = ({ source, title, medium, ...props }) => {
   return (
-    <SContainer>
+    <SContainer {...props}>
       <SImage src={source} />
       <SDescription>
         <p>{title}</p>
