@@ -18,11 +18,13 @@ const ImageIndex = {
   "Durga.png": { title: "Durga Illustration", caption: "Blender"  },
   "CycleGirl.png": { title: "Illustration", caption: "Blender"  },
   "SelfPortrait_2024.jpg": { title: "Self Portrait", caption: "Charcoal on Paper"  },
+  "MaKaBindi.jpg": { title: "Ma ka Bindi", caption: "24” x  18” Acrylic and Bindi on Canvas"  },
 }
 
 const getFileName = (image) => (image.thumb.images.fallback.src.split("/")[4])
 
 const getImageMetadata = (imageFileName) => {
+  console.log(imageFileName)
   return ImageIndex[imageFileName];
 }
 
