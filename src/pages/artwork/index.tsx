@@ -17,12 +17,14 @@ const ImageIndex = {
   "Elkhorn_River_NE.jpg": { title: "Afternoon lights over Elkhorn River (2024)", caption: "20” x  16” Oil over Canvas"  },
   "Durga.png": { title: "Durga Illustration", caption: "Blender"  },
   "CycleGirl.png": { title: "Illustration", caption: "Blender"  },
-  "SelfPortrait_2024.jpeg": { title: "Self Portrait", caption: "Charcoal on Paper"  },
+  "SelfPortrait_2024.jpg": { title: "Self Portrait", caption: "Charcoal on Paper"  },
 }
 
 const getFileName = (image) => (image.thumb.images.fallback.src.split("/")[4])
 
-const getImageMetadata = (imageFileName) => (ImageIndex[imageFileName])
+const getImageMetadata = (imageFileName) => {
+  return ImageIndex[imageFileName];
+}
 
 const pageStyles = {
   color: "#232129",
