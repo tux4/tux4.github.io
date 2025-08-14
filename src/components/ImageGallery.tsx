@@ -1,12 +1,10 @@
 import * as React from "react";
+import Gallery, { GalleryProps } from "@browniebroke/gatsby-image-gallery";
 import styled from "styled-components";
 
-const ImageGallery = styled.div`
-  margin: 0 0 1rem 1rem;
-  padding: 1rem;
-  display: inline-flex;
-  flex-wrap: wrap;
-`;
+const ImageGallery = (props: GalleryProps) => {
+  return <div><Gallery {...props} /></div>
+};
 
 export default ImageGallery;
 

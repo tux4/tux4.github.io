@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 import type { HeadFC, PageProps } from "gatsby"
 import Navigation from "../../components/Navigation"
 import Heading from "../../components/Heading"
-import Gallery from "@browniebroke/gatsby-image-gallery"
+import ImageGallery from "../../components/ImageGallery";
 import Content from "../../components/Content"
+import FullScreenButton from "../../components/FullScreenButton"
 
 const ImageIndex = {
-  "Blue_Ridge_Shenendoah_NP_2023.jpg": { title: "Blue Ridge Mountains (2023)", caption: "20” x 16” Acrylic over Canvas" },
   "Lake_Sonoma_CA_2023.jpg": { title: "Lake Sonoma (2023)", caption: "20” x 16” Acrylic over Canvas" }, 
   "Point_Reyes_CA_2023.jpg": { title: "Point Reyes (2023)", caption: "20” x 16” Acrylic over Canvas"  }, 
   "Queens_NYC_2023.jpg": { title: "Queens Rooftop (2023)", caption: "20” x 16” Acrylic & Oil Pastel over Canvas"  }, 
@@ -33,18 +33,37 @@ const pageStyles = {
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
+
 const ArtworkPage: React.FC<PageProps> = ({data, location}) => {
   const images = data.images.edges
     .filter(({node}) => (node.childImageSharp != null))
     .map(( { node } ) => ({ ...getImageMetadata(getFileName(node.childImageSharp)), ...node.childImageSharp }));
-  console.log(images.map((image) =>  getFileName(image)));
+
+  function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      // If the document is not in full screen mode
+      // make the video full screen
+      document.getElementById("fullscreen-modal")?.requestFullscreen();
+    } else {
+      // Otherwise exit the full screen
+      document.exitFullscreen?.();
+    }
+  }
+
+
   return (
     <main style={pageStyles}>
       <Navigation location={location} />
       <Heading>Prasanna Suman</Heading>
       <Content>
         <h3>Artwork</h3>
-        <Gallery images={images} />
+        <ImageGallery 
+          images={images} 
+          lightboxOptions={{
+            toolbarButtons: [<FullScreenButton onClick={toggleFullScreen} />],
+            reactModalProps: { id: "fullscreen-modal" }
+          }} 
+          />
       </Content>
     </main>
   )

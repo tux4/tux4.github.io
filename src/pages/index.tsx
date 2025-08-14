@@ -5,7 +5,8 @@ import Navigation from "../components/Navigation"
 import Heading from "../components/Heading"
 import Content from "../components/Content"
 import Image from "../components/Image"
-import SelfPortrait from "../images/artwork/Drawings/SelfPortrait_2024.jpeg"
+
+import MainImage from "../images/artwork/Acrylic/Lake_Sonoma_CA_2023.jpg"
 
 const pageStyles = {
   color: "#232129",
@@ -58,7 +59,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
         Prasanna Suman
       </Heading>
       <MainContent>
-        <SImage source={SelfPortrait} title="" medium="" />
+        <SImage source={MainImage} title="" medium="" />
         <Intro>
           <h3>About Me</h3>
           <p style={paragraphStyles}>
