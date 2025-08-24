@@ -24,6 +24,14 @@ const CurrentLink = styled.span`
   text-decoration-style: solid;
 `;
 
+const LineTop = styled.hr`
+  border: 1px dotted grey;
+`;
+
+const LineBottom = styled.hr`
+  border: 1px dotted grey;
+`;
+
 const NavLink = ({ pathname, to, ...props }) => {
   const active = pathname === to;
   return active ? (
@@ -35,6 +43,7 @@ const NavLink = ({ pathname, to, ...props }) => {
 
 const Navigation = ({ location: { pathname } }) => (
   <div>
+    <LineTop />
     <NavLink pathname={pathname} to="/">
       About Me
     </NavLink>
@@ -44,6 +53,7 @@ const Navigation = ({ location: { pathname } }) => (
     <NavLink pathname={pathname} to="/programming/">
       Programmming
     </NavLink>
+    <LineBottom />
   </div>
 );
 

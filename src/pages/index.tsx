@@ -29,19 +29,23 @@ const Intro = styled.div`
   margin-left: 2rem;
 `;
 
-const SImage = styled(Image)`
+const LandingImage = styled(Image)`
   filter: drop-shadow(5px 5px 10px lightgray);
   margin: 2rem 1rem;
 `;
+
+const LandingImageLink = styled.a`
+  min-width: 10rem;
+`
 
 const IndexPage: React.FC<PageProps> = ({ location }) => {
   return (
     <main style={pageStyles}>
       <Navigation location={location} />
       <MainContent>
-        <a href="/artwork">
-          <SImage source={MainImage} title="" medium="" />
-        </a>
+        <LandingImageLink href="/artwork">
+          <LandingImage source={MainImage} title="" medium="" />
+        </LandingImageLink>
         <Intro>
           <p>Hi!</p>
           <p style={paragraphStyles}>
