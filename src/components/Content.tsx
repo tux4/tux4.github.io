@@ -7,4 +7,3 @@ const Content = styled.p`
 `;
 
 export default Content;
-

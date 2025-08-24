@@ -19,7 +19,6 @@ const SDescription = styled.div`
   margin: 1rem 0;
 `;
 
-
 const Image = ({ source, title, medium, ...props }) => {
   return (
     <SContainer {...props}>
@@ -29,8 +28,7 @@ const Image = ({ source, title, medium, ...props }) => {
         <p>{medium}</p>
       </SDescription>
     </SContainer>
-  )
-}
+  );
+};
 
 export default Image;
-
