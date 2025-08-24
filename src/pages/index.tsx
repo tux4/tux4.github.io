@@ -49,19 +49,20 @@ const Intro = styled.div`
 
 const SImage = styled(Image)`
   filter: drop-shadow(5px 5px 10px lightgray);
+  margin: 2rem 1rem;
 `;
 
 const IndexPage: React.FC<PageProps> = ({ location }) => {
   return (
     <main style={pageStyles}>
       <Navigation location={location} />
-      <Heading>Prasanna Suman</Heading>
       <MainContent>
         <SImage source={MainImage} title="" medium="" />
         <Intro>
-          <h3>About Me</h3>
+          <p>Hi!</p>
           <p style={paragraphStyles}>
-            Originally from Nepal, these days I am based in North America.
+            I am Prasanna Suman. Originally from Nepal, these days I am based in
+            North America.
           </p>
           <p style={paragraphStyles}>
             I have worked as a software engineer with a focus on UI development

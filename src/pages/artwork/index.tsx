@@ -82,7 +82,6 @@ const ArtworkPage: React.FC<PageProps> = ({ data, location }) => {
   return (
     <main style={pageStyles}>
       <Navigation location={location} />
-      <Heading>Prasanna Suman</Heading>
       <Content>
         <h3>Artwork</h3>
         <ImageGallery

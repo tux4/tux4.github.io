@@ -13,7 +13,6 @@ const ProgrammingPage: React.FC<PageProps> = ({ data, location }) => {
   return (
     <main style={pageStyles}>
       <Navigation location={location} />
-      <Heading>Prasanna Suman</Heading>
       <Content>
         <h3>Programming Projects</h3>
         <p>
