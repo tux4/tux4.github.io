@@ -13,26 +13,8 @@ const pageStyles = {
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-
-const headingAccentStyles = {
-  color: "#663399",
-};
-
 const paragraphStyles = {
   marginBottom: 24,
-};
-
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
 };
 
 const MainContent = styled.div`
@@ -57,7 +39,9 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
     <main style={pageStyles}>
       <Navigation location={location} />
       <MainContent>
-        <SImage source={MainImage} title="" medium="" />
+        <a href="/artwork">
+          <SImage source={MainImage} title="" medium="" />
+        </a>
         <Intro>
           <p>Hi!</p>
           <p style={paragraphStyles}>
@@ -87,4 +71,4 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => <title>Prasanna - About</title>;

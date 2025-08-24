@@ -60,6 +60,17 @@ const pageStyles = {
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    // If the document is not in full screen mode
+    // make the video full screen
+    document.getElementById("fullscreen-modal")?.requestFullscreen();
+  } else {
+    // Otherwise exit the full screen
+    document.exitFullscreen?.();
+  }
+}
+
 const ArtworkPage: React.FC<PageProps> = ({ data, location }) => {
   const images = data.images.edges
     .filter(({ node }) => node.childImageSharp != null)
@@ -67,17 +78,6 @@ const ArtworkPage: React.FC<PageProps> = ({ data, location }) => {
       ...getImageMetadata(getFileName(node.childImageSharp)),
       ...node.childImageSharp,
     }));
-
-  function toggleFullScreen() {
-    if (!document.fullscreenElement) {
-      // If the document is not in full screen mode
-      // make the video full screen
-      document.getElementById("fullscreen-modal")?.requestFullscreen();
-    } else {
-      // Otherwise exit the full screen
-      document.exitFullscreen?.();
-    }
-  }
 
   return (
     <main style={pageStyles}>
@@ -117,4 +117,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export const Head: HeadFC = () => <title>Artwork Page</title>;
+export const Head: HeadFC = () => <title>Prasanna - Artworks</title>;

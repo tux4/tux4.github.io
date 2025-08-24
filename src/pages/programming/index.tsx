@@ -53,4 +53,4 @@ const ProgrammingPage: React.FC<PageProps> = ({ data, location }) => {
 
 export default ProgrammingPage;
 
-export const Head: HeadFC = () => <title>Artwork Page</title>;
+export const Head: HeadFC = () => <title>Prasanna - Programming</title>;
