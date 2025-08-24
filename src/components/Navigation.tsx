@@ -5,19 +5,23 @@ import styled from "styled-components";
 const StyledLink = styled(Link)`
   font-size: 1rem;
   padding: 1rem;
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 
   &:hover {
-    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: darkslateblue;
   }
 `;
 
 const CurrentLink = styled.span`
+  text-decoration: underline;
   font-size: 1rem;
   padding: 1rem;
   font-weight: bold;
   color: purple;
+  text-decoration-style: solid;
 `;
 
 const NavLink = ({ pathname, to, ...props }) => {
@@ -40,7 +44,6 @@ const Navigation = ({ location: { pathname } }) => (
     <NavLink pathname={pathname} to="/programming/">
       Programmming
     </NavLink>
-    <hr />
   </div>
 );
 
